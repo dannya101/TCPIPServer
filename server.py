@@ -20,7 +20,9 @@ while True:
             print(f"received {data}")
             if data:
                 print("message received")
-                msg = str(data)
+                #msg = str(data)
+                msg = data.decode('utf-8')
+                print(f"encoded message: {msg}")
                 #this is where we would need to convert message to the encoded message
                 
 
