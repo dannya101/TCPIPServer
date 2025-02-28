@@ -72,6 +72,9 @@ def start_client():
         # convert received response from bytes to string in order to disply 
         converted = data.decode('utf-8')
         print("converted message:", converted)
+    
+    except socket.error as e:
+                print(f"Error communicating with the server: {e}")
 
     finally:
         print('closing client')

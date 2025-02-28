@@ -90,6 +90,9 @@ def start_server():
                 else:
                     print("No more data from ", client_address)
                     break
+            
+            except socket.error as e:
+                print(f"Error communicating with the client: {e}")
 
             finally:
                 # close the communication socket on the server side
