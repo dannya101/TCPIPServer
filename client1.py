@@ -45,7 +45,7 @@ if len(message) > 256:
     sys.exit(1)
 
 # create a socket / endpoint for communication with the server
-client_socket = socket.socket()
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # connect to the server's address and port
 server_address = ('localhost', 7070)
