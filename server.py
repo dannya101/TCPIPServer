@@ -3,22 +3,19 @@ import socket
 
 
 try:
-    # server creates a socket / communication endpoint that waits for connections -- specifies ipv4 addressing and tcp
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-
     # server creates a socket / ommunication endpoint that waits for connections -- specifies ipv4 addressing and tcp
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-
     # server uses bind to assign the socket to specific ip address and port number
-    server_socket_addr = ('localhost', 8080)
+    server_socket_addr = ('localhost', 7070)
     server_socket.bind(server_socket_addr)
 
     # server tells the system it is ready to accept connections
     server_socket.listen(1)
+    
 except OSError as e:
     print("Unable to start server. Please check if ports are in use.")
+
 
 # define function for encoding message -- each letter in message converted to next ascii character
 def encode_msg(message):
@@ -26,6 +23,7 @@ def encode_msg(message):
     for i in message:
         msg_converted += chr(ord(i) + 1)
     return msg_converted
+
 
 def start_server():
     try:
